@@ -16,3 +16,31 @@ void buildEmailListPages()
         fullResponse = "No emails loaded.";
         
     }
+rubric:
+10 points - logging in successfully into email
+10 points -  accessing the emails
+10 points -  sending emails
+10 points - receiving emails in real time. 
+
+
+Time log:
+
+Date                                   hours   
+
+Friday 3/14                         1 hour  - doing research and getting a good grasp before springbreak                   
+
+Sunday 3/23                      2 hours  - doing more research                           
+
+Wednesday  3/26(lab time)              1 hour  – downloading arduino IDE, making the file and outlining the functions and their what each function should return, what should be the parameters etc.
+
+Thursday 3/27 (after class, whole group meeting)      1 hour  - group discussion about progress what needs to be made and changed etc
+
+
+Sunday 3/30                1 hour    – working as well as testing the first function. 
+
+
+
+
+why and how we might be able to help overcome any technical issues.
+
+I think to overcome any technical issues we need to use teamwork and communication since we all need to work together and maintain a strict timeline so that the project doesn’t fall behind and to be understanding of each other. The hardest part was fully diving into the arduino IDE it uses C++ but has certain different things that you need to get used to after getting used to it it was pretty easy to understand and get used to the differences.  
