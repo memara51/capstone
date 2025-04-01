@@ -1,0 +1,58 @@
+Simon Buhl sbuhl1
+
+Time log:
+3/21 - 7 hour - Getting the calculator to work with simple test code running on the arduino  
+3/26 - 1 hour - Familiarizing myself with dependencies and starting outline
+3/27 - 1 hour - group discussion
+3/28 - 1 hour - finalizing wifiScan function
+
+My compilable task was getting the calculator to scan for wifi networks 
+and store the last connected network credentials.
+20 points - Scanning networks
+10 points - Removing duplicates
+10 points - Saving last valid credentials
+
+Report: 
+This challenge went well for the most part. The hardest part was
+getting the calculator working the first time, but after that it was pretty 
+easy to work with.
+
+void wifiScan() {
+    Serial.println("Starting WiFi scan...");
+    WiFi.disconnect();
+  delay(100);
+  WiFi.mode(WIFI_STA);    
+    int numNetworks = WiFi.scanNetworks();
+    if (numNetworks == 0) {
+        setError("No networks found");
+        return;
+    }
+
+    ssidCount = 0; 
+    fullResponse = ""; 
+
+    for (int i = 0; i < numNetworks && ssidCount < LISTLEN; i++) {
+        String ssid = WiFi.SSID(i);
+        int rssi = WiFi.RSSI(i);
+
+        // Check for duplicates
+        bool isDuplicate = false;
+        for (int j = 0; j < ssidCount; j++) {
+            if (availableSSIDs[j] == ssid) {
+                isDuplicate = true;
+                break;
+            }
+        }
+
+        if (!isDuplicate) {
+            availableSSIDs[ssidCount++] = ssid;  // Store unique SSID in array
+           // fullResponse += String(ssidCount) + ". " + ssid + " (" + rssi + "dBm)\n";
+            fullResponse += String(ssidCount) + ". " + ssid;
+        }
+    }
+
+    Serial.println("Available networks:");
+    Serial.println(fullResponse);
+    PAGE_PAGE = 0;
+    sendPage();
+}
