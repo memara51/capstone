@@ -1,0 +1,2 @@
+My compilable task was allowing the calculator to access emails based on who logs in. 
+I have a good out line of how many functions are going to be needed and how they each will be implemented to work, and have started working on coding the functions. 
